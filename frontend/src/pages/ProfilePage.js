@@ -7,17 +7,20 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { 
   User, 
   Mail, 
   LogOut, 
   ArrowLeft, 
-  Leaf, 
   Heart, 
   TrendingUp, 
   Award,
   Calendar,
-  Target
+  Target,
+  Phone,
+  MapPin
 } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 import { useFavorites } from "../contexts/FavoritesContext";
@@ -30,7 +33,11 @@ const ProfilePage = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
+    phone: "",
+    location: "",
+    age: "",
+    dietaryGoals: []
   });
 
   const handleSubmit = async (e) => {
@@ -45,7 +52,7 @@ const ProfilePage = () => {
           toast.error(result.error || "Login failed");
         }
       } else {
-        const result = await signup(formData.name, formData.email, formData.password);
+        const result = await signup(formData.name, formData.email, formData.password, formData.phone, formData.location, formData.age, formData.dietaryGoals);
         if (result.success) {
           toast.success("Account created successfully!");
         } else {
@@ -69,6 +76,24 @@ const ProfilePage = () => {
     }));
   };
 
+  const handleDietaryGoalChange = (goal, checked) => {
+    setFormData(prev => ({
+      ...prev,
+      dietaryGoals: checked 
+        ? [...prev.dietaryGoals, goal]
+        : prev.dietaryGoals.filter(g => g !== goal)
+    }));
+  };
+
+  const dietaryGoalOptions = [
+    "Reduce meat consumption",
+    "Improve health",
+    "Environmental impact",
+    "Animal welfare",
+    "Weight management",
+    "Allergies/Intolerances"
+  ];
+
   if (!user) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-amber-50 to-green-100">
@@ -84,8 +109,15 @@ const ProfilePage = () => {
                   </Button>
                 </Link>
                 <div className="flex items-center space-x-2">
-                  <Leaf className="h-8 w-8 text-green-600" />
-                  <span className="text-2xl font-bold text-green-800">PlantCrave</span>
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    <div className="w-6 h-6 bg-green-600 rounded-full relative">
+                      <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
+                        <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                        <div className="w-2 h-2 bg-green-600 rounded-full ml-1"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <span className="text-2xl font-bold text-green-800">CraveKind</span>
                 </div>
               </div>
             </div>
@@ -96,7 +128,7 @@ const ProfilePage = () => {
           <Card className="border-2 border-green-200 bg-white/80 backdrop-blur-sm">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl text-green-800">
-                {isLoginMode ? "Welcome Back!" : "Join PlantCrave"}
+                {isLoginMode ? "Welcome Back!" : "Join CraveKind"}
               </CardTitle>
               <p className="text-green-700">
                 {isLoginMode ? "Sign in to your account" : "Create your account"}
@@ -105,21 +137,77 @@ const ProfilePage = () => {
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 {!isLoginMode && (
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      placeholder="Enter your full name"
-                      value={formData.name}
-                      onChange={(e) => handleInputChange("name", e.target.value)}
-                      required
-                      className="border-green-200 focus:border-green-500"
-                    />
-                  </div>
+                  <>
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Full Name *</Label>
+                      <Input
+                        id="name"
+                        type="text"
+                        placeholder="Enter your full name"
+                        value={formData.name}
+                        onChange={(e) => handleInputChange("name", e.target.value)}
+                        required
+                        className="border-green-200 focus:border-green-500"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone Number</Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="Enter your phone number"
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange("phone", e.target.value)}
+                        className="border-green-200 focus:border-green-500"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="location">Location</Label>
+                      <Input
+                        id="location"
+                        type="text"
+                        placeholder="City, Country"
+                        value={formData.location}
+                        onChange={(e) => handleInputChange("location", e.target.value)}
+                        className="border-green-200 focus:border-green-500"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="age">Age Group</Label>
+                      <Select value={formData.age} onValueChange={(value) => handleInputChange("age", value)}>
+                        <SelectTrigger className="border-green-200 focus:border-green-500">
+                          <SelectValue placeholder="Select your age group" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="18-25">18-25</SelectItem>
+                          <SelectItem value="26-35">26-35</SelectItem>
+                          <SelectItem value="36-45">36-45</SelectItem>
+                          <SelectItem value="46-55">46-55</SelectItem>
+                          <SelectItem value="56+">56+</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="space-y-2">
+                      <Label>Dietary Goals</Label>
+                      <div className="grid grid-cols-1 gap-2">
+                        {dietaryGoalOptions.map((goal) => (
+                          <div key={goal} className="flex items-center space-x-2">
+                            <Checkbox
+                              id={goal}
+                              checked={formData.dietaryGoals.includes(goal)}
+                              onCheckedChange={(checked) => handleDietaryGoalChange(goal, checked)}
+                            />
+                            <Label htmlFor={goal} className="text-sm text-green-700">
+                              {goal}
+                            </Label>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </>
                 )}
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">Email *</Label>
                   <Input
                     id="email"
                     type="email"
@@ -131,7 +219,7 @@ const ProfilePage = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">Password *</Label>
                   <Input
                     id="password"
                     type="password"
@@ -183,8 +271,15 @@ const ProfilePage = () => {
                 </Button>
               </Link>
               <div className="flex items-center space-x-2">
-                <Leaf className="h-8 w-8 text-green-600" />
-                <span className="text-2xl font-bold text-green-800">PlantCrave</span>
+                <div className="w-8 h-8 flex items-center justify-center">
+                  <div className="w-6 h-6 bg-green-600 rounded-full relative">
+                    <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
+                      <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                      <div className="w-2 h-2 bg-green-600 rounded-full ml-1"></div>
+                    </div>
+                  </div>
+                </div>
+                <span className="text-2xl font-bold text-green-800">CraveKind</span>
               </div>
             </div>
             <Button
@@ -210,6 +305,12 @@ const ProfilePage = () => {
           </Avatar>
           <h1 className="text-3xl font-bold text-green-800 mb-2">{user.name}</h1>
           <p className="text-green-700">{user.email}</p>
+          {user.location && (
+            <p className="text-green-600 text-sm flex items-center justify-center">
+              <MapPin className="h-4 w-4 mr-1" />
+              {user.location}
+            </p>
+          )}
         </div>
 
         {/* Stats Cards */}
@@ -244,7 +345,7 @@ const ProfilePage = () => {
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="journey">Journey</TabsTrigger>
-            <TabsTrigger value="preferences">Preferences</TabsTrigger>
+            <TabsTrigger value="details">Details</TabsTrigger>
           </TabsList>
           
           <TabsContent value="overview" className="mt-6">
@@ -326,7 +427,7 @@ const ProfilePage = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-green-800">Journey Started</h3>
-                      <p className="text-sm text-green-700">January 2025 - Beginning your plant-based exploration</p>
+                      <p className="text-sm text-green-700">{user.joinDate || 'January 2025'} - Beginning your plant-based exploration</p>
                     </div>
                   </div>
                   
@@ -354,35 +455,64 @@ const ProfilePage = () => {
             </Card>
           </TabsContent>
 
-          <TabsContent value="preferences" className="mt-6">
+          <TabsContent value="details" className="mt-6">
             <Card className="border-2 border-green-200 bg-white/80 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-green-800">Dietary Preferences</CardTitle>
+                <CardTitle className="text-green-800">Personal Information</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  <div>
-                    <Label className="text-green-800">Dietary Goals</Label>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      <Badge className="bg-green-100 text-green-800">Reduce Meat Consumption</Badge>
-                      <Badge className="bg-green-100 text-green-800">Improve Health</Badge>
-                      <Badge className="bg-green-100 text-green-800">Environmental Impact</Badge>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <User className="h-5 w-5 text-green-600" />
+                      <div>
+                        <p className="text-sm text-green-700">Name</p>
+                        <p className="font-semibold text-green-800">{user.name}</p>
+                      </div>
                     </div>
+                    <div className="flex items-center space-x-3">
+                      <Mail className="h-5 w-5 text-green-600" />
+                      <div>
+                        <p className="text-sm text-green-700">Email</p>
+                        <p className="font-semibold text-green-800">{user.email}</p>
+                      </div>
+                    </div>
+                    {user.phone && (
+                      <div className="flex items-center space-x-3">
+                        <Phone className="h-5 w-5 text-green-600" />
+                        <div>
+                          <p className="text-sm text-green-700">Phone</p>
+                          <p className="font-semibold text-green-800">{user.phone}</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                   
-                  <div>
-                    <Label className="text-green-800">Preferred Alternatives</Label>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      <Badge variant="outline" className="border-green-300 text-green-700">Plant-Based Meat</Badge>
-                      <Badge variant="outline" className="border-green-300 text-green-700">Whole Foods</Badge>
-                      <Badge variant="outline" className="border-green-300 text-green-700">Protein Rich</Badge>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <Label className="text-green-800">Cooking Skill Level</Label>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      <Badge className="bg-amber-100 text-amber-800">Intermediate</Badge>
+                  <div className="space-y-4">
+                    {user.location && (
+                      <div className="flex items-center space-x-3">
+                        <MapPin className="h-5 w-5 text-green-600" />
+                        <div>
+                          <p className="text-sm text-green-700">Location</p>
+                          <p className="font-semibold text-green-800">{user.location}</p>
+                        </div>
+                      </div>
+                    )}
+                    <div>
+                      <p className="text-sm text-green-700 mb-2">Dietary Goals</p>
+                      <div className="flex flex-wrap gap-2">
+                        {user.dietaryGoals?.length > 0 ? (
+                          user.dietaryGoals.map((goal, index) => (
+                            <Badge key={index} className="bg-green-100 text-green-800">
+                              {goal}
+                            </Badge>
+                          ))
+                        ) : (
+                          <Badge className="bg-green-100 text-green-800">
+                            Healthier Lifestyle
+                          </Badge>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
