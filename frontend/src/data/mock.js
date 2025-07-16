@@ -436,7 +436,6 @@ export const mockTestimonials = [
 ];
 
 export const mockStats = {
-  usersHelped: "50,000+",
   mealsReplaced: "2.5M",
   co2Saved: "15,000 tons",
   animalsSpared: "75,000"
