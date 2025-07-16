@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Heart, Shield, Users, ArrowRight, Search, BookOpen, TrendingUp } from "lucide-react";
+import { Heart, Shield, Users, ArrowRight, Search, BookOpen, TrendingUp, Mail } from "lucide-react";
 import { mockStats } from "../data/mock";
+import Logo from "../components/Logo";
 
 const LandingPage = () => {
   return (
@@ -14,17 +15,7 @@ const LandingPage = () => {
       <nav className="bg-white/80 backdrop-blur-md border-b border-green-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 flex items-center justify-center">
-                <div className="w-6 h-6 bg-green-600 rounded-full relative">
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                    <div className="w-2 h-2 bg-green-600 rounded-full ml-1"></div>
-                  </div>
-                </div>
-              </div>
-              <span className="text-2xl font-bold text-green-800">CraveKind</span>
-            </div>
+            <Logo />
             <div className="flex items-center space-x-4">
               <Link to="/search">
                 <Button variant="ghost" className="text-green-700 hover:text-green-900 hover:bg-green-100">
@@ -34,6 +25,11 @@ const LandingPage = () => {
               <Link to="/favorites">
                 <Button variant="ghost" className="text-green-700 hover:text-green-900 hover:bg-green-100">
                   Favorites
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button variant="ghost" className="text-green-700 hover:text-green-900 hover:bg-green-100">
+                  Contact
                 </Button>
               </Link>
               <Link to="/profile">
@@ -186,11 +182,21 @@ const LandingPage = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-6 h-6 bg-white rounded-full relative">
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <div className="w-2 h-2 bg-white rounded-full ml-1"></div>
-                  </div>
+                <div className="w-6 h-6 relative">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+                    <path
+                      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                      fill="white"
+                    />
+                    <path
+                      d="M7 2c-1.5 0-2.5 1-2.5 2.5 0 1.5 1 2.5 2.5 2.5 0.5 0 1-0.2 1.4-0.6L9 5.5c0.3-0.4 0.5-0.9 0.5-1.5C9.5 3 8.5 2 7 2z"
+                      fill="#22c55e"
+                    />
+                    <path
+                      d="M17 2c1.5 0 2.5 1 2.5 2.5 0 1.5-1 2.5-2.5 2.5-0.5 0-1-0.2-1.4-0.6L15 5.5c-0.3-0.4-0.5-0.9-0.5-1.5C14.5 3 15.5 2 17 2z"
+                      fill="#22c55e"
+                    />
+                  </svg>
                 </div>
                 <span className="text-xl font-bold">CraveKind</span>
               </div>
@@ -219,8 +225,16 @@ const LandingPage = () => {
             <div>
               <h3 className="font-semibold mb-4">Support</h3>
               <ul className="space-y-2 text-green-200">
-                <li>Help Center</li>
-                <li>Contact Us</li>
+                <li>
+                  <Link to="/contact" className="hover:text-white transition-colors">
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <a href="mailto:cravekind@gmail.com" className="hover:text-white transition-colors">
+                    Business Inquiries
+                  </a>
+                </li>
                 <li>Privacy Policy</li>
                 <li>Terms of Service</li>
               </ul>

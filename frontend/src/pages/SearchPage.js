@@ -21,6 +21,7 @@ import { mockMeatAlternatives, mockNutritionalSupplements } from "../data/mock";
 import { useAuth } from "../contexts/AuthContext";
 import { useFavorites } from "../contexts/FavoritesContext";
 import { toast } from "sonner";
+import Logo from "../components/Logo";
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -74,17 +75,7 @@ const SearchPage = () => {
                   Back
                 </Button>
               </Link>
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 flex items-center justify-center">
-                  <div className="w-6 h-6 bg-green-600 rounded-full relative">
-                    <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
-                      <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                      <div className="w-2 h-2 bg-green-600 rounded-full ml-1"></div>
-                    </div>
-                  </div>
-                </div>
-                <span className="text-2xl font-bold text-green-800">CraveKind</span>
-              </div>
+              <Logo />
             </div>
             <div className="flex items-center space-x-4">
               <Link to="/favorites">
