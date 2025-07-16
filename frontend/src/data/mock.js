@@ -413,30 +413,12 @@ export const mockNutritionalSupplements = [
 ];
 
 export const mockTestimonials = [
-  {
-    id: 1,
-    name: "Mike Johnson",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    text: "This app helped me transition to plant-based eating seamlessly. The nutritional insights were eye-opening!",
-    rating: 5,
-    transition: "3 months meat-free"
-  },
-  {
-    id: 2,
-    name: "Emma Wilson",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b45f2a86?w=100&h=100&fit=crop&crop=face",
-    text: "The recipe suggestions are amazing! I never thought vegan alternatives could taste this good.",
-    rating: 5,
-    transition: "1 year plant-based"
-  },
-  {
-    id: 3,
-    name: "David Chen",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-    text: "Understanding the nutritional deficiencies behind my cravings helped me make better choices.",
-    rating: 5,
-    transition: "6 months vegan"
-  }
+  // Testimonials will be added by admin or users later
+];
+
+// Add structure for future user reviews
+export const mockUserReviews = [
+  // Will be populated from backend when users submit reviews
 ];
 
 export const mockStats = {
