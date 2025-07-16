@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Leaf, Heart, Shield, Users, Star, ArrowRight, Search, BookOpen, TrendingUp } from "lucide-react";
-import { mockTestimonials, mockStats } from "../data/mock";
+import { Heart, Shield, Users, ArrowRight, Search, BookOpen, TrendingUp } from "lucide-react";
+import { mockStats } from "../data/mock";
 
 const LandingPage = () => {
   return (
@@ -15,8 +15,15 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <Leaf className="h-8 w-8 text-green-600" />
-              <span className="text-2xl font-bold text-green-800">PlantCrave</span>
+              <div className="w-8 h-8 flex items-center justify-center">
+                <div className="w-6 h-6 bg-green-600 rounded-full relative">
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
+                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                    <div className="w-2 h-2 bg-green-600 rounded-full ml-1"></div>
+                  </div>
+                </div>
+              </div>
+              <span className="text-2xl font-bold text-green-800">CraveKind</span>
             </div>
             <div className="flex items-center space-x-4">
               <Link to="/search">
@@ -80,11 +87,7 @@ const LandingPage = () => {
       {/* Stats Section */}
       <section className="py-16 bg-white/60 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">{mockStats.usersHelped}</div>
-              <div className="text-green-700">Users Helped</div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold text-green-600 mb-2">{mockStats.mealsReplaced}</div>
               <div className="text-green-700">Meals Replaced</div>
@@ -106,7 +109,7 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-green-800 mb-4">
-              Why Choose PlantCrave?
+              Why Choose CraveKind?
             </h2>
             <p className="text-xl text-green-700 max-w-2xl mx-auto">
               We make the transition to plant-based eating simple, informed, and delicious
@@ -156,49 +159,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white/60 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-green-800 mb-4">
-              Success Stories
-            </h2>
-            <p className="text-xl text-green-700">
-              Real people, real transformations
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {mockTestimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="border-2 border-green-200 bg-white/80 backdrop-blur-sm">
-                <CardHeader className="text-center">
-                  <Avatar className="h-16 w-16 mx-auto mb-4">
-                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                    <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                  </Avatar>
-                  <div className="flex justify-center mb-2">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <Badge variant="secondary" className="bg-green-100 text-green-800">
-                    {testimonial.transition}
-                  </Badge>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-green-700 text-center italic">
-                    "{testimonial.text}"
-                  </p>
-                  <p className="text-green-600 text-center font-semibold mt-2">
-                    - {testimonial.name}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-green-700">
         <div className="max-w-4xl mx-auto text-center">
@@ -206,7 +166,7 @@ const LandingPage = () => {
             Ready to Transform Your Eating Habits?
           </h2>
           <p className="text-xl text-green-100 mb-8">
-            Join thousands of people who have discovered the joy of plant-based eating
+            Join the movement towards compassionate, healthy eating choices
           </p>
           <Link to="/search">
             <Button 
@@ -226,11 +186,16 @@ const LandingPage = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Leaf className="h-6 w-6" />
-                <span className="text-xl font-bold">PlantCrave</span>
+                <div className="w-6 h-6 bg-white rounded-full relative">
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                    <div className="w-2 h-2 bg-white rounded-full ml-1"></div>
+                  </div>
+                </div>
+                <span className="text-xl font-bold">CraveKind</span>
               </div>
               <p className="text-green-200">
-                Helping people make compassionate food choices for a healthier planet.
+                Satisfy your cravings, stay kind.
               </p>
             </div>
             <div>
@@ -262,7 +227,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="border-t border-green-700 mt-8 pt-8 text-center text-green-200">
-            <p>&copy; 2025 PlantCrave. Made with ❤️ for animals and the planet.</p>
+            <p>&copy; 2025 CraveKind. Made with ❤️ for animals and the planet.</p>
           </div>
         </div>
       </footer>
