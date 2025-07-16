@@ -422,7 +422,9 @@ export const mockUserReviews = [
 ];
 
 export const mockStats = {
-  mealsReplaced: "2.5M",
+  mealsReplaced: "2,500,000",
   co2Saved: "15,000 tons",
-  animalsSpared: "75,000"
+  animalsSpared: "75,000",
+  landSaved: "50,000 acres",
+  waterSaved: "2.5 billion gallons"
 };
