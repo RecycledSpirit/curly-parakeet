@@ -377,6 +377,10 @@ export const mockUser = {
   id: 1,
   name: "Sarah Green",
   email: "sarah@example.com",
+  phone: "",
+  location: "",
+  dietaryGoals: [],
+  joinDate: "2025-01-15",
   favorites: [1, 4, 8], // IDs of favorite alternatives
   searchHistory: ["beef", "chicken", "fish"]
 };
