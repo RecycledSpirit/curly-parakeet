@@ -11,16 +11,24 @@ const Logo = ({ className = "w-8 h-8", textSize = "text-2xl" }) => {
             d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
             fill="#16a34a"
           />
-          {/* Left leaf */}
+          {/* Left leaf sprouting from top */}
           <path
-            d="M7 2c-1.5 0-2.5 1-2.5 2.5 0 1.5 1 2.5 2.5 2.5 0.5 0 1-0.2 1.4-0.6L9 5.5c0.3-0.4 0.5-0.9 0.5-1.5C9.5 3 8.5 2 7 2z"
+            d="M8 3c-2 0-3 1-3 3 0 2 1 3 3 3 1 0 2-1 3-2 1-1 1-2 1-3 0-1-1-1-2-1h-2z"
             fill="#22c55e"
           />
-          {/* Right leaf */}
+          {/* Right leaf sprouting from top */}
           <path
-            d="M17 2c1.5 0 2.5 1 2.5 2.5 0 1.5-1 2.5-2.5 2.5-0.5 0-1-0.2-1.4-0.6L15 5.5c-0.3-0.4-0.5-0.9-0.5-1.5C14.5 3 15.5 2 17 2z"
+            d="M16 3c2 0 3 1 3 3 0 2-1 3-3 3-1 0-2-1-3-2-1-1-1-2-1-3 0-1 1-1 2-1h2z"
             fill="#22c55e"
           />
+          {/* Center leaf/stem */}
+          <path
+            d="M12 1c-0.5 0-1 0.5-1 1v3c0 0.5 0.5 1 1 1s1-0.5 1-1V2c0-0.5-0.5-1-1-1z"
+            fill="#22c55e"
+          />
+          {/* Small leaves on stem */}
+          <ellipse cx="10" cy="2.5" rx="1.5" ry="0.8" fill="#22c55e" transform="rotate(-45 10 2.5)"/>
+          <ellipse cx="14" cy="2.5" rx="1.5" ry="0.8" fill="#22c55e" transform="rotate(45 14 2.5)"/>
         </svg>
       </div>
       <span className={`${textSize} font-bold text-green-800`}>CraveKind</span>
