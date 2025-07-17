@@ -90,7 +90,7 @@ const SearchPage = () => {
     }
   };
 
-  const quickSearchOptions = ["beef", "chicken", "pork", "fish", "lamb"];
+  const quickSearchOptions = ["beef", "chicken", "pork", "fish", "lamb", "duck", "turkey", "shrimp", "sausage"];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-amber-50 to-green-100">
