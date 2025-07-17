@@ -30,18 +30,29 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      // TODO: Replace with actual API call
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-      
-      toast.success("Thank you for your message! We'll get back to you soon.");
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        message: ""
+      const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+      const response = await fetch(`${BACKEND_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      if (response.ok) {
+        const result = await response.json();
+        toast.success(result.message || "Thank you for your message! We'll get back to you soon.");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          message: ""
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again or email us directly at cravekind@gmail.com");
     } finally {
       setIsSubmitting(false);
     }
