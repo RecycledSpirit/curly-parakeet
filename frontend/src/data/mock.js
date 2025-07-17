@@ -375,8 +375,8 @@ export const mockMeatAlternatives = {
 
 export const mockUser = {
   id: 1,
-  name: "Sarah Green",
-  email: "sarah@example.com",
+  name: "Kind Explorer", // Generic name instead of Sarah Green
+  email: "user@example.com",
   phone: "",
   location: "",
   dietaryGoals: [],
