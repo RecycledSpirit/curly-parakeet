@@ -22,6 +22,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { useFavorites } from "../contexts/FavoritesContext";
 import { toast } from "sonner";
 import Logo from "../components/Logo";
+import Disclaimer from "../components/Disclaimer";
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
