@@ -363,6 +363,8 @@ const SearchPage = () => {
           </div>
         )}
 
+        <Disclaimer />
+
         {/* No Results */}
         {searchTerm && !searchResults && (
           <div className="text-center py-16">
