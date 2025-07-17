@@ -67,14 +67,16 @@ const LandingPage = () => {
                   Find Your Alternative
                 </Button>
               </Link>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-4 text-lg font-semibold rounded-full"
-              >
-                <BookOpen className="h-5 w-5 mr-2" />
-                Learn More
-              </Button>
+              <Link to="/contact">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-4 text-lg font-semibold rounded-full"
+                >
+                  <BookOpen className="h-5 w-5 mr-2" />
+                  Get Support
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
