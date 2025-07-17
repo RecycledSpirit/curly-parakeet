@@ -32,13 +32,43 @@ const SearchPage = () => {
 
   const handleSearch = (term) => {
     const normalizedTerm = term.toLowerCase().trim();
-    const results = Object.values(mockMeatAlternatives).find(
-      meat => meat.name.toLowerCase().includes(normalizedTerm)
-    );
     
-    if (results) {
-      setSearchResults(results);
-      setSelectedMeat(normalizedTerm);
+    // Extended search mapping for better results
+    const searchMap = {
+      'beef': ['beef', 'steak', 'burger', 'ground beef', 'beef roast', 'brisket'],
+      'chicken': ['chicken', 'chicken breast', 'chicken thigh', 'poultry', 'chicken nugget', 'chicken wing'],
+      'pork': ['pork', 'bacon', 'ham', 'sausage', 'pork chop', 'pork belly', 'pepperoni'],
+      'fish': ['fish', 'salmon', 'tuna', 'cod', 'tilapia', 'halibut', 'seafood'],
+      'lamb': ['lamb', 'mutton', 'lamb chop'],
+      'duck': ['duck', 'duck breast'],
+      'turkey': ['turkey', 'turkey breast'],
+      'shrimp': ['shrimp', 'prawns', 'shellfish'],
+      'crab': ['crab', 'crab meat', 'shellfish'],
+      'oysters': ['oysters', 'clams', 'mussels', 'shellfish'],
+      'tenderloin': ['tenderloin', 'beef tenderloin', 'pork tenderloin']
+    };
+    
+    // Find matching meat type
+    let matchedMeatType = null;
+    for (const [meatType, searchTerms] of Object.entries(searchMap)) {
+      if (searchTerms.some(term => term.includes(normalizedTerm) || normalizedTerm.includes(term))) {
+        matchedMeatType = meatType;
+        break;
+      }
+    }
+    
+    // If no direct match, try partial matching
+    if (!matchedMeatType) {
+      const allMeatTypes = Object.keys(mockMeatAlternatives);
+      matchedMeatType = allMeatTypes.find(meat => 
+        meat.toLowerCase().includes(normalizedTerm) || 
+        normalizedTerm.includes(meat.toLowerCase())
+      );
+    }
+    
+    if (matchedMeatType && mockMeatAlternatives[matchedMeatType]) {
+      setSearchResults(mockMeatAlternatives[matchedMeatType]);
+      setSelectedMeat(matchedMeatType);
     } else {
       setSearchResults(null);
       setSelectedMeat(null);
