@@ -17,7 +17,7 @@ import {
   BookOpen,
   ChefHat
 } from "lucide-react";
-import { mockMeatAlternatives, mockNutritionalSupplements } from "../data/expanded_mock";
+import { mockMeatAlternatives, mockNutritionalSupplements, searchMapping } from "../data/comprehensive_mock";
 import { useAuth } from "../contexts/AuthContext";
 import { useFavorites } from "../contexts/FavoritesContext";
 import { toast } from "sonner";
