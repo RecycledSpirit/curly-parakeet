@@ -107,10 +107,10 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-green-800 mb-4">
-              Why Choose CraveKind?
+              Help replace 2.5 million meals, save 15,000 tons of CO₂, and spare 75,000 animals - one craving at a time.
             </h2>
             <p className="text-xl text-green-700 max-w-2xl mx-auto">
-              We make the transition to plant-based eating simple, informed, and delicious
+              We make the transition to plant-based eating kind, intuitive, and crave-worthy
             </p>
           </div>
           
