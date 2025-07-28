@@ -76,6 +76,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+@app.on_event("startup")
+async def startup_db_client():
+    """Initialize database connection on startup."""
+    await db_service.connect()
+
 @app.on_event("shutdown")
 async def shutdown_db_client():
+    """Close database connection on shutdown."""
+    await db_service.disconnect()
     client.close()
