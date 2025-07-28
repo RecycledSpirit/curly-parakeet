@@ -34,42 +34,46 @@ const SearchPage = () => {
   const handleSearch = (term) => {
     const normalizedTerm = term.toLowerCase().trim();
     
-    // Extended search mapping for better results
-    const searchMap = {
-      'beef': ['beef', 'steak', 'burger', 'ground beef', 'beef roast', 'brisket'],
-      'chicken': ['chicken', 'chicken breast', 'chicken thigh', 'poultry', 'chicken nugget', 'chicken wing'],
-      'pork': ['pork', 'bacon', 'ham', 'sausage', 'pork chop', 'pork belly', 'pepperoni'],
-      'fish': ['fish', 'salmon', 'tuna', 'cod', 'tilapia', 'halibut', 'seafood'],
-      'lamb': ['lamb', 'mutton', 'lamb chop'],
-      'duck': ['duck', 'duck breast'],
-      'turkey': ['turkey', 'turkey breast'],
-      'shrimp': ['shrimp', 'prawns', 'shellfish'],
-      'crab': ['crab', 'crab meat', 'shellfish'],
-      'oysters': ['oysters', 'clams', 'mussels', 'shellfish'],
-      'tenderloin': ['tenderloin', 'beef tenderloin', 'pork tenderloin']
-    };
+    // First, try to find exact match in comprehensive database
+    if (mockMeatAlternatives[normalizedTerm]) {
+      setSearchResults(mockMeatAlternatives[normalizedTerm]);
+      setSelectedMeat(normalizedTerm);
+      return;
+    }
     
-    // Find matching meat type
-    let matchedMeatType = null;
-    for (const [meatType, searchTerms] of Object.entries(searchMap)) {
-      if (searchTerms.some(term => term.includes(normalizedTerm) || normalizedTerm.includes(term))) {
-        matchedMeatType = meatType;
-        break;
+    // Use search mapping for better results
+    let matchedKey = null;
+    for (const [key, variations] of Object.entries(searchMapping)) {
+      if (variations.some(variation => 
+        variation.includes(normalizedTerm) || 
+        normalizedTerm.includes(variation) ||
+        normalizedTerm.includes(key)
+      )) {
+        // Find the actual data key that matches
+        const dataKey = variations.find(v => mockMeatAlternatives[v]) || 
+                       Object.keys(mockMeatAlternatives).find(k => k.includes(key));
+        if (dataKey && mockMeatAlternatives[dataKey]) {
+          matchedKey = dataKey;
+          break;
+        }
       }
     }
     
-    // If no direct match, try partial matching
-    if (!matchedMeatType) {
-      const allMeatTypes = Object.keys(mockMeatAlternatives);
-      matchedMeatType = allMeatTypes.find(meat => 
-        meat.toLowerCase().includes(normalizedTerm) || 
-        normalizedTerm.includes(meat.toLowerCase())
-      );
+    // If search mapping found something
+    if (matchedKey) {
+      setSearchResults(mockMeatAlternatives[matchedKey]);
+      setSelectedMeat(matchedKey);
+      return;
     }
     
-    if (matchedMeatType && mockMeatAlternatives[matchedMeatType]) {
-      setSearchResults(mockMeatAlternatives[matchedMeatType]);
-      setSelectedMeat(matchedMeatType);
+    // Fallback: try partial matching on all keys
+    const partialMatch = Object.keys(mockMeatAlternatives).find(key => 
+      key.includes(normalizedTerm) || normalizedTerm.includes(key)
+    );
+    
+    if (partialMatch) {
+      setSearchResults(mockMeatAlternatives[partialMatch]);
+      setSelectedMeat(partialMatch);
     } else {
       setSearchResults(null);
       setSelectedMeat(null);
