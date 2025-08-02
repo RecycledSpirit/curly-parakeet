@@ -118,7 +118,7 @@ const LandingPage = () => {
             <Card className="border-2 border-green-200 bg-white/80 backdrop-blur-sm hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="text-center">
                 <Shield className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <CardTitle className="text-green-800">🛡️ Decode Your Cravings</CardTitle>
+                <CardTitle className="text-green-800">Understand Your Cravings</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-green-700 text-center">
@@ -131,7 +131,7 @@ const LandingPage = () => {
             <Card className="border-2 border-green-200 bg-white/80 backdrop-blur-sm hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="text-center">
                 <Heart className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <CardTitle className="text-green-800">💚 Swap Smarter</CardTitle>
+                <CardTitle className="text-green-800">Swap Smarter</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-green-700 text-center">
@@ -144,7 +144,7 @@ const LandingPage = () => {
             <Card className="border-2 border-green-200 bg-white/80 backdrop-blur-sm hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="text-center">
                 <Users className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <CardTitle className="text-green-800">👩‍🍳 Crave-Worthy Recipes</CardTitle>
+                <CardTitle className="text-green-800">Recipe Inspiration</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-green-700 text-center">
