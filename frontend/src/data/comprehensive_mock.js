@@ -586,7 +586,7 @@ export const searchMapping = {
   'tuna': ['tuna'],
   'shrimp': ['shrimp', 'prawns'],
   'crab': ['crab'],
-  'yam': ['yam', 'purple yam', 'white yam'], // Points to shrimp alternatives which includes yam
+  'yam': ['yam', 'purple yam', 'white yam'], // Dedicated yam entry for fish alternatives
   
   // International
   'bulgogi': ['bulgogi', 'korean bbq'],
