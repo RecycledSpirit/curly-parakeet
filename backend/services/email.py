@@ -19,6 +19,18 @@ class EmailService:
     def send_email(self, to_email: str, subject: str, html_content: str, text_content: Optional[str] = None) -> bool:
         """Send an email."""
         try:
+            # If no SMTP credentials, log the email instead of sending
+            if not self.smtp_username or not self.smtp_password:
+                logger.info(f"Email Service - No SMTP credentials configured")
+                logger.info(f"MOCK EMAIL SENT:")
+                logger.info(f"To: {to_email}")
+                logger.info(f"Subject: {subject}")
+                logger.info(f"HTML Content: {html_content}")
+                if text_content:
+                    logger.info(f"Text Content: {text_content}")
+                logger.info("=" * 50)
+                return True
+
             msg = MIMEMultipart("alternative")
             msg["Subject"] = subject
             msg["From"] = f"{self.from_name} <{self.from_email}>"
