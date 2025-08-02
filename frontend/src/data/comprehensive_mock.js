@@ -401,6 +401,60 @@ export const comprehensiveMeatAlternatives = {
     ]
   },
 
+  "yam": {
+    name: "Yam (for Fish Cravings)",
+    deficiency: "Texture, Complex Carbs, Nutrients",
+    deficiencyExplanation: "Yam can satisfy fish cravings by providing firm texture and complex nutrients, making it an excellent fish alternative.",
+    alternatives: [
+      {
+        id: 147,
+        name: "Purple Yam",
+        brand: "Homemade",
+        type: "Root vegetable alternative",
+        nutrition: { protein: "2g", iron: "1mg", calories: "115", fat: "0g", fiber: "4g", b12: "0mcg" },
+        benefits: ["High potassium", "Complex carbs", "Antioxidants", "Natural sweetness"],
+        availability: "All grocery stores, Asian markets"
+      },
+      {
+        id: 148,
+        name: "White Yam",
+        brand: "Homemade",
+        type: "Root vegetable alternative", 
+        nutrition: { protein: "2g", iron: "1mg", calories: "118", fat: "0g", fiber: "4g", b12: "0mcg" },
+        benefits: ["High potassium", "Complex carbs", "Low fat", "Versatile preparation"],
+        availability: "All grocery stores"
+      },
+      {
+        id: 149,
+        name: "Marinated Yam Steaks",
+        brand: "Homemade",
+        type: "Prepared alternative",
+        nutrition: { protein: "2g", iron: "1mg", calories: "140", fat: "4g", fiber: "4g", b12: "0mcg" },
+        benefits: ["Fish-like texture", "Absorbs flavors well", "Sustainable", "Budget-friendly"],
+        availability: "Make at home"
+      }
+    ],
+    meatSideEffects: ["Mercury in fish", "Overfishing", "Microplastics", "Ocean pollution"],
+    recipes: [
+      {
+        id: 144,
+        title: "Yam 'Fish' Steaks with Lemon",
+        time: "30 mins",
+        difficulty: "Easy",
+        ingredients: ["Large yam", "Lemon juice", "Herbs", "Olive oil", "Salt"],
+        instructions: "Slice yam thick, marinate in lemon and herbs for 15 mins, pan-sear until golden and tender. Season with salt and serve with lemon wedges."
+      },
+      {
+        id: 145,
+        title: "Crispy Yam Fish & Chips",
+        time: "40 mins",
+        difficulty: "Medium",
+        ingredients: ["Yam", "Flour batter", "Oil for frying", "Potatoes", "Malt vinegar"],
+        instructions: "Cut yam into fish-like strips, batter and fry until crispy. Serve with crispy chips and malt vinegar for authentic fish & chips experience."
+      }
+    ]
+  },
+
   // Breakfast Meats
   "bacon": {
     name: "Bacon",
