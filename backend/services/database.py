@@ -99,7 +99,7 @@ class DatabaseService:
     async def health_check(self) -> Dict[str, Any]:
         """Check database health."""
         try:
-            if not self.client:
+            if self.client is None:
                 return {"status": "error", "message": "Not connected"}
             
             # Ping database
