@@ -217,19 +217,51 @@ const LandingPage = () => {
             <div>
               <h3 className="font-semibold mb-4">Features</h3>
               <ul className="space-y-2 text-green-200">
-                <li>Craving Analysis</li>
-                <li>Vegan Alternatives</li>
-                <li>Recipe Database</li>
-                <li>Nutritional Info</li>
+                <li>
+                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
+                    Craving Analysis
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
+                    Vegan Alternatives
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
+                    Recipe Database
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
+                    Nutritional Info
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-4">Resources</h3>
               <ul className="space-y-2 text-green-200">
-                <li>Getting Started</li>
-                <li>Nutrition Guide</li>
-                <li>Recipe Collection</li>
-                <li>Community</li>
+                <li>
+                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
+                    Getting Started
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
+                    Nutrition Guide
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
+                    Recipe Collection
+                  </Link>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors cursor-pointer" onClick={(e) => { e.preventDefault(); alert('Community feature coming soon!'); }}>
+                    Community
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
