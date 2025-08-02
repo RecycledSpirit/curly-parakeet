@@ -347,6 +347,60 @@ export const comprehensiveMeatAlternatives = {
     ]
   },
 
+  "shrimp": {
+    name: "Shrimp",
+    deficiency: "Protein, Iodine, Texture",
+    deficiencyExplanation: "Shrimp cravings often indicate protein and iodine needs, along with desire for firm, succulent texture.",
+    alternatives: [
+      {
+        id: 144,
+        name: "King Oyster Mushroom 'Shrimp'",
+        brand: "Homemade",
+        type: "Whole food alternative",
+        nutrition: { protein: "3g", iron: "1mg", calories: "35", fat: "0g", fiber: "2g", b12: "0mcg" },
+        benefits: ["Low calorie", "Natural umami", "No cholesterol", "Sustainable"],
+        availability: "Asian markets, specialty stores"
+      },
+      {
+        id: 145,
+        name: "Sophie's Kitchen Toona Shrimp",
+        brand: "Sophie's Kitchen",
+        type: "Plant-based seafood",
+        nutrition: { protein: "12g", iron: "2mg", calories: "100", fat: "4g", fiber: "3g", b12: "0mcg" },
+        benefits: ["No cholesterol", "Ocean-friendly", "Good protein", "Konjac-based"],
+        availability: "Health food stores, online"
+      },
+      {
+        id: 146,
+        name: "Yam (Purple/White)",
+        brand: "Homemade",
+        type: "Whole food alternative",
+        nutrition: { protein: "2g", iron: "1mg", calories: "115", fat: "0g", fiber: "4g", b12: "0mcg" },
+        benefits: ["High potassium", "Complex carbs", "Antioxidants", "Natural sweetness"],
+        availability: "All grocery stores"
+      }
+    ],
+    meatSideEffects: ["Cholesterol", "Shellfish allergies", "Ocean pollution", "Overfishing"],
+    recipes: [
+      {
+        id: 142,
+        title: "Bang Bang Mushroom 'Shrimp'",
+        time: "20 mins",
+        difficulty: "Easy",
+        ingredients: ["King oyster mushrooms", "Cornstarch", "Plant milk", "Spicy mayo", "Green onions"],
+        instructions: "Score mushrooms to create shrimp-like texture, coat in batter, fry until golden, toss in bang bang sauce."
+      },
+      {
+        id: 143,
+        title: "Crispy Yam Tempura",
+        time: "25 mins",
+        difficulty: "Medium",
+        ingredients: ["Yam", "Tempura batter", "Ice water", "Oil for frying", "Soy dipping sauce"],
+        instructions: "Slice yam into rounds, prepare light tempura batter with ice water, fry until crispy, serve with dipping sauce."
+      }
+    ]
+  },
+
   // Breakfast Meats
   "bacon": {
     name: "Bacon",
