@@ -268,17 +268,25 @@ const LandingPage = () => {
               <h3 className="font-semibold mb-4">Support</h3>
               <ul className="space-y-2 text-green-200">
                 <li>
-                  <Link to="/contact" className="hover:text-white transition-colors">
+                  <Link to="/contact" className="hover:text-white transition-colors cursor-pointer">
                     Contact Us
                   </Link>
                 </li>
                 <li>
-                  <a href="mailto:cravekind@gmail.com" className="hover:text-white transition-colors">
-                    Business Inquiries
+                  <span className="hover:text-white transition-colors cursor-pointer">
+                    cravekind@gmail.com
+                  </span>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors cursor-pointer" onClick={(e) => { e.preventDefault(); alert('Privacy Policy page coming soon!'); }}>
+                    Privacy Policy
                   </a>
                 </li>
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors cursor-pointer" onClick={(e) => { e.preventDefault(); alert('Terms of Service page coming soon!'); }}>
+                    Terms of Service
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
