@@ -7,6 +7,7 @@ import SearchPage from "./pages/SearchPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import ProfilePage from "./pages/ProfilePage";
 import ContactPage from "./pages/ContactPage";
+import ComingSoonPage from "./pages/ComingSoonPage";
 import { AuthProvider } from "./contexts/AuthContext";
 import { FavoritesProvider } from "./contexts/FavoritesContext";
 
@@ -22,6 +23,7 @@ function App() {
               <Route path="/favorites" element={<FavoritesPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/coming-soon" element={<ComingSoonPage />} />
             </Routes>
             <Toaster />
           </BrowserRouter>
