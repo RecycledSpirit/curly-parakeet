@@ -258,9 +258,9 @@ const LandingPage = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition-colors cursor-pointer" onClick={(e) => { e.preventDefault(); alert('Community feature coming soon!'); }}>
+                  <Link to="/coming-soon" className="hover:text-white transition-colors cursor-pointer">
                     Community
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
