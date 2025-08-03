@@ -79,14 +79,9 @@ const ContactPage = () => {
                   Search
                 </Button>
               </Link>
-              <Link to="/favorites">
-                <Button variant="ghost" className="text-green-700 hover:text-green-900 hover:bg-green-100">
-                  Favorites
-                </Button>
-              </Link>
-              <Link to="/profile">
+              <Link to="/contact">
                 <Button className="bg-green-600 hover:bg-green-700 text-white">
-                  Profile
+                  Contact
                 </Button>
               </Link>
             </div>
