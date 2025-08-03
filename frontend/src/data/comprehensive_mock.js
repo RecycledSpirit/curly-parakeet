@@ -493,6 +493,77 @@ export const comprehensiveMeatAlternatives = {
     ]
   },
 
+  "eggs": {
+    name: "Eggs",
+    deficiency: "Protein, B12, Choline, Texture",
+    deficiencyExplanation: "Egg cravings often indicate protein deficiency, need for B vitamins (especially B12 and choline), or desire for that unique creamy-firm texture.",
+    alternatives: [
+      {
+        id: 152,
+        name: "JUST Egg (Liquid)",
+        brand: "JUST",
+        type: "Plant-based liquid egg",
+        nutrition: { protein: "5g", iron: "2mg", calories: "70", fat: "5g", fiber: "0g", b12: "2.4mcg" },
+        benefits: ["Cholesterol-free", "B12 fortified", "Cooks like eggs", "Sustainable"],
+        availability: "Refrigerated section, most grocery stores"
+      },
+      {
+        id: 153,
+        name: "Tofu Scramble",
+        brand: "Homemade",
+        type: "Whole food alternative",
+        nutrition: { protein: "10g", iron: "3mg", calories: "95", fat: "6g", fiber: "2g", b12: "0mcg" },
+        benefits: ["Complete protein", "Customizable", "Budget-friendly", "High protein"],
+        availability: "All grocery stores"
+      },
+      {
+        id: 154,
+        name: "Chickpea Flour Omelette",
+        brand: "Homemade",
+        type: "Legume-based alternative",
+        nutrition: { protein: "6g", iron: "2mg", calories: "110", fat: "2g", fiber: "5g", b12: "0mcg" },
+        benefits: ["High fiber", "Gluten-free", "Protein-rich", "Versatile"],
+        availability: "Health stores, online"
+      },
+      {
+        id: 155,
+        name: "Kala Namak (Black Salt) Tofu",
+        brand: "Homemade",
+        type: "Sulfur-enhanced alternative",
+        nutrition: { protein: "10g", iron: "3mg", calories: "95", fat: "6g", fiber: "2g", b12: "0mcg" },
+        benefits: ["Authentic egg flavor", "Complete protein", "Natural sulfur", "No cholesterol"],
+        availability: "Indian grocery stores, online"
+      }
+    ],
+    meatSideEffects: ["Cholesterol (186mg per egg)", "Salmonella risk", "Factory farming", "Saturated fat"],
+    recipes: [
+      {
+        id: 151,
+        title: "Perfect Tofu Scramble",
+        time: "15 mins",
+        difficulty: "Easy",
+        ingredients: ["Extra-firm tofu", "Turmeric", "Nutritional yeast", "Kala namak", "Onions", "Spinach", "Olive oil"],
+        instructions: "Crumble tofu, sauté onions, add tofu with turmeric and nutritional yeast, cook until heated through. Season with kala namak for egg-like flavor."
+      },
+      {
+        id: 152,
+        title: "Fluffy Chickpea Omelette",
+        time: "20 mins",
+        difficulty: "Medium",
+        ingredients: ["Chickpea flour", "Water", "Turmeric", "Kala namak", "Vegetables", "Herbs"],
+        instructions: "Whisk chickpea flour with water and spices until smooth. Cook like pancake, add vegetables, fold in half. Serve hot."
+      },
+      {
+        id: 153,
+        title: "JUST Egg Benedict",
+        time: "25 mins",
+        difficulty: "Medium",
+        ingredients: ["JUST Egg", "English muffins", "Spinach", "Vegan hollandaise", "Canadian bacon alternative"],
+        instructions: "Cook JUST Egg like scrambled eggs, toast muffins, layer with spinach and egg, top with vegan hollandaise sauce."
+      }
+    ]
+  },
+
   // International Dishes
   "bulgogi": {
     name: "Bulgogi (Korean BBQ)",
