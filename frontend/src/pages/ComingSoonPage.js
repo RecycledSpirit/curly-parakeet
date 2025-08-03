@@ -181,7 +181,7 @@ const ComingSoonPage = () => {
           <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 text-white">
             <Clock className="h-12 w-12 mx-auto mb-4" />
             <h2 className="text-2xl font-bold mb-4">
-              Expected Launch: Spring 2025
+              Coming Soon!
             </h2>
             <p className="text-green-100 mb-6 max-w-2xl mx-auto">
               We're working hard to create the perfect community experience. 
