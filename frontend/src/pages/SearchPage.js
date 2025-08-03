@@ -107,21 +107,20 @@ const SearchPage = () => {
               <Link to="/">
                 <Button variant="ghost" size="sm" className="text-green-700 hover:text-green-900 hover:bg-green-100">
                   <ArrowLeft className="h-4 w-4 mr-2" />
-                  Back
+                  Home
                 </Button>
               </Link>
               <Logo />
             </div>
             <div className="flex items-center space-x-4">
-              <Link to="/favorites">
+              <Link to="/contact">
                 <Button variant="ghost" className="text-green-700 hover:text-green-900 hover:bg-green-100">
-                  <Heart className="h-4 w-4 mr-2" />
-                  Favorites
+                  Contact
                 </Button>
               </Link>
-              <Link to="/profile">
+              <Link to="/search">
                 <Button className="bg-green-600 hover:bg-green-700 text-white">
-                  Profile
+                  Search Again
                 </Button>
               </Link>
             </div>
