@@ -215,46 +215,21 @@ const LandingPage = () => {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Features</h3>
+              <h3 className="font-semibold mb-4">Quick Access</h3>
               <ul className="space-y-2 text-green-200">
                 <li>
                   <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
-                    Craving Analysis
+                    Find Alternatives
                   </Link>
                 </li>
                 <li>
-                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
-                    Vegan Alternatives
+                  <Link to="/favorites" className="hover:text-white transition-colors cursor-pointer">
+                    My Favorites
                   </Link>
                 </li>
                 <li>
-                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
-                    Recipe Database
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
-                    Nutritional Info
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2 text-green-200">
-                <li>
-                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
-                    Getting Started
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
-                    Nutrition Guide
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/search" className="hover:text-white transition-colors cursor-pointer">
-                    Recipe Collection
+                  <Link to="/profile" className="hover:text-white transition-colors cursor-pointer">
+                    My Profile
                   </Link>
                 </li>
                 <li>
