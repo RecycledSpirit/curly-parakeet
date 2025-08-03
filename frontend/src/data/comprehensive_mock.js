@@ -647,6 +647,9 @@ export const searchMapping = {
   'pepperoni': ['pepperoni'],
   'ham': ['ham', 'breakfast ham'],
   
+  // Breakfast/Dairy
+  'eggs': ['egg', 'eggs', 'scrambled eggs', 'fried eggs', 'omelette', 'omelet'],
+  
   // Poultry dishes
   'wings': ['chicken wings', 'buffalo wings'],
   'nuggets': ['chicken nuggets', 'nuggets'],
