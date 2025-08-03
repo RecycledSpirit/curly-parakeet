@@ -861,6 +861,10 @@ export const searchMapping = {
   
   // Breakfast/Dairy
   'eggs': ['egg', 'eggs', 'scrambled eggs', 'fried eggs', 'omelette', 'omelet'],
+  'milk': ['milk', 'whole milk', '2% milk', 'skim milk', 'dairy milk'],
+  'cheese': ['cheese', 'cheddar', 'mozzarella', 'parmesan', 'swiss', 'gouda', 'brie', 'feta', 'cream cheese'],
+  'butter': ['butter', 'unsalted butter', 'salted butter', 'margarine'],
+  'ghee': ['ghee', 'clarified butter'],
   
   // Poultry dishes
   'wings': ['chicken wings', 'buffalo wings'],
