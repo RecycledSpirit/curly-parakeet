@@ -275,15 +275,14 @@ const ContactPage = () => {
                   Start Exploring
                 </Button>
               </Link>
-              <Link to="/profile">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-green-700 font-semibold px-8"
-                >
-                  Create Account
-                </Button>
-              </Link>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-green-700 font-semibold px-8"
+                onClick={() => alert('User accounts coming soon! For now, enjoy exploring vegan alternatives.')}
+              >
+                Create Account
+              </Button>
             </div>
           </div>
         </div>
