@@ -218,13 +218,8 @@ const LandingPage = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/favorites" className="hover:text-white transition-colors cursor-pointer">
-                    My Favorites
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/profile" className="hover:text-white transition-colors cursor-pointer">
-                    My Profile
+                  <Link to="/contact" className="hover:text-white transition-colors cursor-pointer">
+                    Contact Us
                   </Link>
                 </li>
                 <li>
