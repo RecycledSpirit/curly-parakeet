@@ -253,21 +253,6 @@ const ContactPage = () => {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Response Time */}
-            <Card className="border-2 border-amber-200 bg-amber-50/80 backdrop-blur-sm">
-              <CardContent className="pt-6">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <MessageSquare className="h-6 w-6 text-amber-600" />
-                  </div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Quick Response</h3>
-                  <p className="text-sm text-amber-700">
-                    We typically respond within 24 hours during business days.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
 
