@@ -22,22 +22,16 @@ const LandingPage = () => {
                   Search
                 </Button>
               </Link>
-              <Link to="/favorites">
-                <Button variant="ghost" className="text-green-700 hover:text-green-900 hover:bg-green-100">
-                  Favorites
-                </Button>
-              </Link>
               <Link to="/contact">
                 <Button variant="ghost" className="text-green-700 hover:text-green-900 hover:bg-green-100">
                   Contact
                 </Button>
               </Link>
-              <Button 
-                className="bg-green-600 hover:bg-green-700 text-white"
-                onClick={() => alert('User accounts coming soon! Start exploring alternatives now.')}
-              >
-                Get Started
-              </Button>
+              <Link to="/search">
+                <Button className="bg-green-600 hover:bg-green-700 text-white">
+                  Find Alternatives
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
