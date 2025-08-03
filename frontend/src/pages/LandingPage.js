@@ -32,11 +32,12 @@ const LandingPage = () => {
                   Contact
                 </Button>
               </Link>
-              <Link to="/profile">
-                <Button className="bg-green-600 hover:bg-green-700 text-white">
-                  Get Started
-                </Button>
-              </Link>
+              <Button 
+                className="bg-green-600 hover:bg-green-700 text-white"
+                onClick={() => alert('User accounts coming soon! Start exploring alternatives now.')}
+              >
+                Get Started
+              </Button>
             </div>
           </div>
         </div>
