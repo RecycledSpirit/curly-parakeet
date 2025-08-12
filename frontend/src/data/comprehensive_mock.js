@@ -43,6 +43,14 @@ export const comprehensiveMeatAlternatives = {
         difficulty: "Easy",
         ingredients: ["Extra-firm tofu", "Fresh herbs", "Olive oil", "Garlic", "Lemon juice"],
         instructions: "Press tofu, marinate in herb mixture, pan-sear until golden."
+      },
+      {
+        id: 102,
+        title: "Vegan Chicken Momos",
+        time: "45 mins",
+        difficulty: "Medium",
+        ingredients: ["Soy curls or tofu", "Momo wrappers", "Ginger", "Garlic", "Soy sauce", "Scallions", "Sesame oil"],
+        instructions: "Rehydrate soy curls, season with ginger-garlic paste, wrap in momo skins, steam for 15 minutes. Serve with spicy tomato chutney."
       }
     ]
   },
