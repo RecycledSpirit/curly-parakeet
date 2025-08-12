@@ -849,7 +849,7 @@ export const comprehensiveMeatAlternatives = {
 // Quick search mapping for better results
 export const searchMapping = {
   // Basic proteins
-  'chicken': ['chicken', 'chicken breast', 'poultry'],
+  'chicken': ['chicken', 'chicken breast', 'poultry', 'chicken momo', 'chicken momos', 'chicken dumplings', 'steamed chicken dumplings'],
   'beef': ['beef', 'ground beef', 'beef steak', 'steak', 'hamburger', 'burger'],
   'pork': ['pork', 'pulled pork', 'pork chops', 'pork ribs'],
   
