@@ -294,7 +294,9 @@ const LandingPage = () => {
           </div>
         </div>
       </footer>
-    </div>
+      
+      </div> {/* Close Main Content div */}
+    </div> {/* Close outer wrapper div */}
   );
 };
 
