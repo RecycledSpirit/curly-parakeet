@@ -10,7 +10,32 @@ import Logo from "../components/Logo";
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-amber-50 to-green-100">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-amber-50 to-green-100 relative overflow-hidden">
+      {/* CUTE ANIMAL BORDER - Big faces around entire page */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {/* Top Border Animals */}
+        <div className="absolute top-0 left-0 w-24 h-24 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-80" style={{backgroundImage: "url('https://images.unsplash.com/photo-1674980750262-260775bf2212?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute top-0 left-32 w-20 h-20 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-70" style={{backgroundImage: "url('https://images.unsplash.com/photo-1710780126902-a29d3a89bf7f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute top-0 right-32 w-22 h-22 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-75" style={{backgroundImage: "url('https://images.unsplash.com/photo-1628788985444-27871e39a1df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwzfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute top-0 right-0 w-24 h-24 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-80" style={{backgroundImage: "url('https://images.unsplash.com/photo-1726562530228-704147f55249?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        
+        {/* Left Border Animals */}
+        <div className="absolute left-0 top-1/4 w-20 h-20 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-70" style={{backgroundImage: "url('https://images.unsplash.com/photo-1609103566358-ccab56549f8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHxhbmltYWwlMjBwb3J0cmFpdHN8ZW58MHx8fHwxNzU1MDMxMDYzfDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute left-0 top-3/4 w-24 h-24 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-80" style={{backgroundImage: "url('https://images.unsplash.com/photo-1648615112210-37b804dfad1b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwzfHxhbmltYWwlMjBwb3J0cmFpdHN8ZW58MHx8fHwxNzU1MDMxMDYzfDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        
+        {/* Right Border Animals */}
+        <div className="absolute right-0 top-1/4 w-22 h-22 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-75" style={{backgroundImage: "url('https://images.unsplash.com/photo-1648615112483-aeed3ce1385e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHw0fHxhbmltYWwlMjBwb3J0cmFpdHN8ZW58MHx8fHwxNzU1MDMxMDYzfDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute right-0 top-3/4 w-20 h-20 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-70" style={{backgroundImage: "url('https://images.pexels.com/photos/2123375/pexels-photo-2123375.jpeg')"}}></div>
+        
+        {/* Bottom Border Animals */}
+        <div className="absolute bottom-0 left-0 w-22 h-22 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-75" style={{backgroundImage: "url('https://images.unsplash.com/photo-1674980750262-260775bf2212?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute bottom-0 left-32 w-24 h-24 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-80" style={{backgroundImage: "url('https://images.unsplash.com/photo-1710780126902-a29d3a89bf7f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute bottom-0 right-32 w-20 h-20 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-70" style={{backgroundImage: "url('https://images.unsplash.com/photo-1628788985444-27871e39a1df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwzfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute bottom-0 right-0 w-24 h-24 bg-cover bg-center rounded-full border-4 border-white shadow-lg opacity-80" style={{backgroundImage: "url('https://images.unsplash.com/photo-1726562530228-704147f55249?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+      </div>
+
+      {/* Main Content with higher z-index */}
+      <div className="relative z-10">
       {/* Navigation */}
       <nav className="bg-white/80 backdrop-blur-md border-b border-green-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
