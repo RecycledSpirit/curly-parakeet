@@ -38,41 +38,50 @@ const LandingPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-green-800 mb-6 leading-tight">
-              Discover Your Perfect
-              <span className="block bg-gradient-to-r from-green-600 to-amber-600 bg-clip-text text-transparent">
-                Plant-Based Alternative
-              </span>
-            </h1>
-            <p className="text-xl text-green-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Transform your meat cravings into healthy, compassionate choices. 
-              Understand what your body needs and discover amazing vegan alternatives 
-              that satisfy both your taste buds and nutritional requirements.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/search">
-                <Button 
-                  size="lg" 
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
-                >
-                  <Search className="h-5 w-5 mr-2" />
-                  Find Your Alternative
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-4 text-lg font-semibold rounded-full"
-                >
-                  <BookOpen className="h-5 w-5 mr-2" />
-                  Get Support
-                </Button>
-              </Link>
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-amber-50 to-green-100 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-24 h-24 bg-cover bg-center rounded-full" style={{backgroundImage: "url('https://images.unsplash.com/photo-1578956919791-af7615c94b90?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxjdXRlJTIwYW5pbWFsc3xlbnwwfHx8fDE3NTUwMjY5OTF8MA&ixlib=rb-4.1.0&q=85')"}}></div>
+          <div className="absolute top-40 right-20 w-20 h-20 bg-cover bg-center rounded-full" style={{backgroundImage: "url('https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg')"}}></div>
+          <div className="absolute bottom-32 left-20 w-28 h-28 bg-cover bg-center rounded-full" style={{backgroundImage: "url('https://images.unsplash.com/photo-1484557985045-edf25e08da73?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxmYXJtJTIwYW5pbWFsc3xlbnwwfHx8fDE3NTUwMjY5OTh8MA&ixlib=rb-4.1.0&q=85')"}}></div>
+          <div className="absolute bottom-20 right-32 w-24 h-24 bg-cover bg-center rounded-full" style={{backgroundImage: "url('https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg')"}}></div>
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="mb-8">
+            <Logo />
+          </div>
+          <h1 className="text-6xl font-bold text-green-800 mb-6 tracking-tight">
+            Crave <span className="text-amber-600">Kind</span>
+          </h1>
+          <p className="text-2xl text-green-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Discover delicious vegan alternatives for every meat craving. 
+            <br />
+            <span className="text-lg text-green-600">Kind to animals, kind to your taste buds, kind to the planet.</span>
+          </p>
+          
+          {/* Cute Animal Feature */}
+          <div className="mb-8 flex justify-center">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border-2 border-green-200">
+              <div className="flex items-center justify-center space-x-4 mb-4">
+                <div className="w-16 h-16 bg-cover bg-center rounded-full border-3 border-white shadow-md" style={{backgroundImage: "url('https://images.unsplash.com/photo-1454179083322-198bb4daae41?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwxfHxmYXJtJTIwYW5pbWFsc3xlbnwwfHx8fDE3NTUwMjY5OTh8MA&ixlib=rb-4.1.0&q=85')"}}></div>
+                <span className="text-3xl">💚</span>
+                <div className="w-16 h-16 bg-cover bg-center rounded-full border-3 border-white shadow-md" style={{backgroundImage: "url('https://images.unsplash.com/photo-1578956919791-af7615c94b90?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxjdXRlJTIwYW5pbWFsc3xlbnwwfHx8fDE3NTUwMjY5OTF8MA&ixlib=rb-4.1.0&q=85')"}}></div>
+              </div>
+              <p className="text-green-700 font-medium">Every choice matters to them 🐾</p>
             </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Link to="/search">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 text-lg">
+                🔍 Find Your Alternative
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="lg" variant="outline" className="border-green-600 text-green-700 hover:bg-green-50 font-semibold px-8 py-4 text-lg">
+                💬 Get Support
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
