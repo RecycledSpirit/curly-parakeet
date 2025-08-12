@@ -53,13 +53,6 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-amber-50 to-green-100 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-24 h-24 bg-cover bg-center rounded-full" style={{backgroundImage: "url('https://images.unsplash.com/photo-1578956919791-af7615c94b90?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxjdXRlJTIwYW5pbWFsc3xlbnwwfHx8fDE3NTUwMjY5OTF8MA&ixlib=rb-4.1.0&q=85')"}}></div>
-          <div className="absolute top-40 right-20 w-20 h-20 bg-cover bg-center rounded-full" style={{backgroundImage: "url('https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg')"}}></div>
-          <div className="absolute bottom-32 left-20 w-28 h-28 bg-cover bg-center rounded-full" style={{backgroundImage: "url('https://images.unsplash.com/photo-1484557985045-edf25e08da73?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxmYXJtJTIwYW5pbWFsc3xlbnwwfHx8fDE3NTUwMjY5OTh8MA&ixlib=rb-4.1.0&q=85')"}}></div>
-          <div className="absolute bottom-20 right-32 w-24 h-24 bg-cover bg-center rounded-full" style={{backgroundImage: "url('https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg')"}}></div>
-        </div>
-        
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8">
             <Logo />
