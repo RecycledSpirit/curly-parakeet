@@ -4,6 +4,11 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
 import logging
+from dotenv import load_dotenv
+from pathlib import Path
+
+# Load environment variables
+load_dotenv(Path(__file__).parent.parent / '.env')
 
 logger = logging.getLogger(__name__)
 
