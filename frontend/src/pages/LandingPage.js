@@ -11,18 +11,16 @@ import Logo from "../components/Logo";
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-amber-50 to-green-100 relative overflow-hidden">
-      {/* CUTE ANIMAL DECORATIONS - In empty spaces only */}
-      <div className="fixed inset-0 pointer-events-none z-10">
-        {/* Animals in empty margins - not covering content */}
-        <div className="absolute top-1/3 left-2 w-20 h-20 bg-cover bg-center rounded-full border-3 border-white shadow-lg opacity-80" style={{backgroundImage: "url('https://images.unsplash.com/photo-1674980750262-260775bf2212?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
-        <div className="absolute top-2/3 left-2 w-24 h-24 bg-cover bg-center rounded-full border-3 border-white shadow-lg opacity-85" style={{backgroundImage: "url('https://images.unsplash.com/photo-1710780126902-a29d3a89bf7f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+      {/* CUTE ANIMAL DECORATIONS - Visible but not disruptive */}
+      <div className="fixed inset-0 pointer-events-none z-20">
+        {/* Animals in side margins only - visible above content but not blocking */}
+        <div className="absolute top-1/4 left-4 w-16 h-16 bg-cover bg-center rounded-full border-2 border-white shadow-lg opacity-90" style={{backgroundImage: "url('https://images.unsplash.com/photo-1674980750262-260775bf2212?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute top-1/2 left-4 w-20 h-20 bg-cover bg-center rounded-full border-2 border-white shadow-lg opacity-85" style={{backgroundImage: "url('https://images.unsplash.com/photo-1710780126902-a29d3a89bf7f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute top-3/4 left-4 w-18 h-18 bg-cover bg-center rounded-full border-2 border-white shadow-lg opacity-90" style={{backgroundImage: "url('https://images.unsplash.com/photo-1628788985444-27871e39a1df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwzfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
         
-        <div className="absolute top-1/3 right-2 w-22 h-22 bg-cover bg-center rounded-full border-3 border-white shadow-lg opacity-80" style={{backgroundImage: "url('https://images.unsplash.com/photo-1628788985444-27871e39a1df?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwzfHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
-        <div className="absolute top-2/3 right-2 w-20 h-20 bg-cover bg-center rounded-full border-3 border-white shadow-lg opacity-85" style={{backgroundImage: "url('https://images.unsplash.com/photo-1726562530228-704147f55249?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
-        
-        {/* Bottom corners only - away from footer content */}
-        <div className="absolute bottom-4 left-4 w-18 h-18 bg-cover bg-center rounded-full border-3 border-white shadow-lg opacity-75" style={{backgroundImage: "url('https://images.unsplash.com/photo-1609103566358-ccab56549f8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHxhbmltYWwlMjBwb3J0cmFpdHN8ZW58MHx8fHwxNzU1MDMxMDYzfDA&ixlib=rb-4.1.0&q=85')"}}></div>
-        <div className="absolute bottom-4 right-4 w-18 h-18 bg-cover bg-center rounded-full border-3 border-white shadow-lg opacity-75" style={{backgroundImage: "url('https://images.pexels.com/photos/2123375/pexels-photo-2123375.jpeg')"}}></div>
+        <div className="absolute top-1/4 right-4 w-18 h-18 bg-cover bg-center rounded-full border-2 border-white shadow-lg opacity-90" style={{backgroundImage: "url('https://images.unsplash.com/photo-1726562530228-704147f55249?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHxjdXRlJTIwYW5pbWFsJTIwZmFjZXN8ZW58MHx8fHwxNzU1MDMxMDU1fDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute top-1/2 right-4 w-16 h-16 bg-cover bg-center rounded-full border-2 border-white shadow-lg opacity-85" style={{backgroundImage: "url('https://images.unsplash.com/photo-1609103566358-ccab56549f8d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwyfHxhbmltYWwlMjBwb3J0cmFpdHN8ZW58MHx8fHwxNzU1MDMxMDYzfDA&ixlib=rb-4.1.0&q=85')"}}></div>
+        <div className="absolute top-3/4 right-4 w-20 h-20 bg-cover bg-center rounded-full border-2 border-white shadow-lg opacity-90" style={{backgroundImage: "url('https://images.pexels.com/photos/2123375/pexels-photo-2123375.jpeg')"}}></div>
       </div>
 
       {/* Main Content with higher z-index */}
